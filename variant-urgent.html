@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ремонт холодильников в Сургуте на дому | Выезд сегодня, гарантия 1 год</title>
+    <meta name="description" content="Срочный ремонт холодильников и морозильных камер в Сургуте. Диагностика бесплатно при ремонте, выезд мастера в день обращения, гарантия на работы и запчасти до 1 года.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Archivo+Black&family=Archivo:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #121212;
+            --panel: #1a1a1a;
+            --panel-alt: #212121;
+            --border: #2e2e2e;
+            --muted: #a3a3a3;
+
+            --red: #ff3b30;
+            --red-hover: #e0281e;
+            --yellow: #ffcc00;
+
+            --text: #f5f5f5;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body { font-family: 'Manrope', sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
+
+        h1, h2, h3, .display-text { font-family: 'Archivo', sans-serif; font-weight: 800; line-height: 1.1; text-transform: uppercase; letter-spacing: -0.5px; }
+
+        .container { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+        a { color: inherit; }
+
+        /* --- ШАПКА --- */
+        nav {
+            position: sticky; top: 0; z-index: 200; background-color: rgba(18,18,18,0.92); backdrop-filter: blur(8px); padding: 18px 0;
+            border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;
+        }
+        .logo { font-family: 'Archivo Black', sans-serif; font-size: 1.2rem; text-transform: uppercase; display: flex; align-items: center; gap: 10px; }
+        .logo-badge { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; background: var(--red); border-radius: 6px; color: #fff; font-size: 1rem; }
+        .nav-links { display: flex; gap: 25px; }
+        .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--yellow); }
+
+        .status { font-size: 0.85rem; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+        .status a { text-decoration: none; font-weight: 800; color: var(--text); transition: color 0.2s; }
+        .status a:hover { color: var(--yellow); }
+
+        /* --- HERO --- */
+        .hero-section { background: radial-gradient(circle at 20% 10%, #241414, var(--bg) 55%); padding: 90px 0 70px 0; position: relative; overflow: hidden; }
+        .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 50px; align-items: center; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,59,48,0.12); border: 1px solid rgba(255,59,48,0.5); color: var(--yellow); font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 8px 16px; border-radius: 4px; margin-bottom: 25px; }
+        .hero-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--red); animation: pulse 1s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+        .hero-section h1 { font-size: clamp(2.4rem, 4.6vw, 3.6rem); margin-bottom: 20px; }
+        .hero-section h1 span { color: var(--red); }
+        .hero-section p.lead { font-size: 1.1rem; color: var(--muted); max-width: 520px; margin-bottom: 35px; text-transform: none; }
+
+        .hero-cta-row { display: flex; gap: 15px; flex-wrap: wrap; }
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 10px; background-color: var(--red); color: #fff; text-decoration: none; padding: 18px 32px;
+            font-size: 0.95rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; border-radius: 6px; border: none; cursor: pointer; transition: background 0.2s, transform 0.2s;
+        }
+        .btn-primary:hover { background-color: var(--red-hover); transform: translateY(-2px); }
+        .btn-secondary {
+            display: inline-flex; align-items: center; gap: 10px; background: transparent; color: var(--yellow); text-decoration: none; padding: 18px 32px;
+            font-size: 0.95rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; border-radius: 6px; border: 2px solid var(--yellow); transition: background 0.2s;
+        }
+        .btn-secondary:hover { background: rgba(255,204,0,0.1); }
+
+        .hero-stats { display: flex; gap: 30px; margin-top: 45px; flex-wrap: wrap; }
+        .hero-stat b { display: block; font-family: 'Archivo', sans-serif; font-size: 1.9rem; color: var(--yellow); text-transform: none; }
+        .hero-stat span { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+
+        .hero-panel {
+            background: var(--panel); border: 1px solid var(--border); border-left: 4px solid var(--red); border-radius: 10px; padding: 35px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+        .hero-panel h3 { font-size: 1.05rem; margin-bottom: 20px; color: #fff; }
+        .symptom-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 25px; }
+        .symptom-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 0.92rem; color: var(--muted); }
+        .symptom-list li::before { content: "!"; flex-shrink: 0; width: 22px; height: 22px; border-radius: 4px; background: rgba(255,59,48,0.15); color: var(--red); font-weight: 800; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; }
+        .hero-panel-note { font-size: 0.8rem; color: var(--muted); border-top: 1px solid var(--border); padding-top: 18px; }
+
+        /* --- ДОВЕРИЕ --- */
+        .trust-bar { background: var(--panel); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 35px 0; }
+        .trust-bar .container { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; text-align: center; }
+        .trust-item { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); }
+        .trust-item b { display: block; font-family: 'Archivo', sans-serif; font-size: 1.5rem; color: var(--yellow); text-transform: none; margin-bottom: 6px; }
+
+        /* --- ПОЧЕМУ МЫ --- */
+        .section { padding: 90px 0; }
+        .section-header { text-align: center; max-width: 640px; margin: 0 auto 55px auto; }
+        .section-kicker { display: inline-block; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: var(--red); margin-bottom: 12px; }
+        .section-header h2 { font-size: clamp(1.9rem, 3.6vw, 2.5rem); margin-bottom: 12px; }
+        .section-header p { color: var(--muted); font-size: 1rem; text-transform: none; }
+
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+        .feature-card { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 32px; transition: transform 0.25s, border-color 0.25s; }
+        .feature-card:hover { transform: translateY(-6px); border-color: var(--red); }
+        .feature-icon { width: 48px; height: 48px; border-radius: 8px; background: rgba(255,59,48,0.12); color: var(--red); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 18px; }
+        .feature-card h3 { font-size: 1.05rem; margin-bottom: 10px; text-transform: none; }
+        .feature-card p { font-size: 0.92rem; color: var(--muted); }
+
+        /* --- ПРОБЛЕМЫ --- */
+        .problems-section { background: var(--panel-alt); }
+        .problems-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+        .problem-card { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 24px 26px; display: flex; align-items: center; gap: 16px; transition: border-color 0.2s; }
+        .problem-card:hover { border-color: var(--yellow); }
+        .problem-icon { flex-shrink: 0; width: 42px; height: 42px; border-radius: 8px; background: rgba(255,204,0,0.1); color: var(--yellow); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+        .problem-card span { font-size: 0.95rem; color: #f0f0f0; text-transform: none; }
+
+        /* --- ШАГИ --- */
+        .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
+        .step-card { position: relative; padding-top: 10px; }
+        .step-number { font-family: 'Archivo Black', sans-serif; font-size: 2.8rem; color: var(--panel-alt); -webkit-text-stroke: 1px var(--border); line-height: 1; margin-bottom: 12px; }
+        .step-card h3 { font-size: 1rem; margin-bottom: 10px; text-transform: none; }
+        .step-card p { font-size: 0.9rem; color: var(--muted); }
+
+        /* --- ПРАЙС --- */
+        .price-section { background: var(--bg); }
+        .price-table { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+        .price-row-item {
+            display: flex; justify-content: space-between; align-items: center; gap: 20px;
+            padding: 22px 28px; border-bottom: 1px solid var(--border);
+        }
+        .price-row-item:last-child { border-bottom: none; }
+        .price-name { font-size: 0.98rem; font-weight: 600; }
+        .price-name small { display: block; font-weight: 400; color: var(--muted); font-size: 0.82rem; margin-top: 4px; }
+        .price-value { font-family: 'Archivo', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--yellow); white-space: nowrap; }
+        .price-note { text-align: center; font-size: 0.88rem; color: var(--muted); margin-top: 25px; text-transform: none; }
+
+        /* --- ОТЗЫВЫ --- */
+        .reviews-section { background: var(--panel-alt); scroll-margin-top: 80px; }
+        .reviews-carousel-wrapper { position: relative; display: flex; align-items: center; }
+        .carousel-nav-btn {
+            position: absolute; top: 50%; transform: translateY(-50%); width: 48px; height: 48px;
+            background-color: var(--panel); border: 1px solid var(--border); border-radius: 50%; font-size: 1.1rem;
+            color: var(--text); cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3); transition: all 0.25s ease;
+        }
+        .carousel-nav-btn:hover { background-color: var(--red); color: #fff; border-color: var(--red); }
+        .carousel-nav-btn.prev { left: -20px; }
+        .carousel-nav-btn.next { right: -20px; }
+
+        .reviews-carousel {
+            display: flex; overflow-x: auto; gap: 20px; padding-bottom: 10px; scroll-snap-type: x mandatory;
+            -ms-overflow-style: none; scrollbar-width: none; width: 100%;
+        }
+        .reviews-carousel::-webkit-scrollbar { display: none; }
+
+        .review-card {
+            flex: 0 0 320px; background: var(--panel); padding: 30px; border: 1px solid var(--border); border-radius: 10px;
+            display: flex; flex-direction: column; justify-content: space-between; scroll-snap-align: center;
+        }
+        .review-stars { color: var(--yellow); font-size: 1.1rem; letter-spacing: 3px; margin-bottom: 18px; }
+        .review-text { font-size: 0.92rem; color: var(--muted); font-style: italic; margin-bottom: 25px; line-height: 1.7; flex-grow: 1; text-transform: none; }
+        .review-author-wrap { display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--border); padding-top: 16px; }
+        .review-author { font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 1rem; text-transform: none; }
+        .review-date { font-size: 0.78rem; color: var(--muted); }
+        .review-service { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-top: 5px; }
+
+        /* --- FAQ --- */
+        .faq-item { border-bottom: 1px solid var(--border); padding: 22px 0; }
+        .faq-item summary { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 1.02rem; text-transform: none; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::after { content: "+"; font-size: 1.5rem; font-weight: 300; color: var(--red); flex-shrink: 0; }
+        .faq-item[open] summary::after { content: "\2013"; }
+        .faq-item p { margin-top: 14px; color: var(--muted); font-size: 0.94rem; max-width: 700px; text-transform: none; }
+
+        /* --- ФИНАЛЬНЫЙ CTA --- */
+        .final-cta { background: linear-gradient(135deg, #2a1010, var(--bg) 70%); color: #fff; padding: 80px 0; text-align: center; }
+        .final-cta h2 { font-size: clamp(1.9rem, 3.6vw, 2.5rem); margin-bottom: 15px; }
+        .final-cta p { color: var(--muted); margin-bottom: 35px; font-size: 1.05rem; text-transform: none; }
+        .final-cta .hero-cta-row { justify-content: center; }
+
+        /* --- ФУТЕР --- */
+        footer { background-color: var(--panel); border-top: 1px solid var(--border); padding: 40px 0; text-align: center; color: var(--muted); font-size: 0.85rem; }
+        .footer-logo { font-family: 'Archivo Black', sans-serif; font-size: 1.1rem; color: var(--text); margin-bottom: 10px; }
+
+        /* --- МОДАЛЬНОЕ ОКНО --- */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center; padding: 20px; }
+        .modal-content { background-color: var(--panel); color: var(--text); padding: 40px; width: 100%; max-width: 480px; position: relative; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 25px 60px rgba(0,0,0,0.5); max-height: 90vh; overflow-y: auto; }
+        .modal-close { position: absolute; top: 20px; right: 20px; font-size: 1.6rem; line-height: 1; cursor: pointer; color: var(--muted); transition: color 0.2s; }
+        .modal-close:hover { color: #fff; }
+        .order-form .form-group { margin-bottom: 18px; }
+        .order-form label { display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 8px; color: var(--text); text-transform: uppercase; letter-spacing: 0.3px; }
+        .order-form input[type="text"], .order-form input[type="tel"], .order-form textarea {
+            width: 100%; padding: 14px 16px; border: 1px solid var(--border); background: var(--bg); color: var(--text); border-radius: 8px;
+            font-family: 'Manrope', sans-serif; font-size: 0.95rem; transition: border-color 0.2s;
+        }
+        .order-form input:focus, .order-form textarea:focus { outline: none; border-color: var(--red); }
+
+        .consent-label { display: flex; align-items: flex-start; gap: 10px; font-size: 0.8rem; font-weight: 400; text-transform: none; color: var(--muted); cursor: pointer; }
+        .consent-label input[type="checkbox"] { flex-shrink: 0; width: 16px; height: 16px; margin-top: 2px; accent-color: var(--red); cursor: pointer; }
+        .consent-label a { color: var(--yellow); text-decoration: underline; }
+
+        .mobile-sticky-cta { display: none; }
+
+        @media (max-width: 900px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .problems-grid { grid-template-columns: 1fr; }
+            .steps-grid { grid-template-columns: repeat(2, 1fr); gap: 35px; }
+        }
+
+        @media (max-width: 768px) {
+            nav { justify-content: center; text-align: center; }
+            .nav-links { display: none; }
+            .status span { display: none; }
+            .trust-bar .container { grid-template-columns: repeat(2, 1fr); }
+            .features-grid { grid-template-columns: 1fr; }
+            .section { padding: 60px 0; }
+            .price-row-item { flex-direction: column; align-items: flex-start; gap: 6px; }
+            .hero-cta-row .btn-primary, .hero-cta-row .btn-secondary { width: 100%; justify-content: center; }
+            body { padding-bottom: calc(70px + env(safe-area-inset-bottom)); }
+            .carousel-nav-btn { display: none; }
+            .mobile-sticky-cta {
+                display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 300;
+                background: var(--panel); border-top: 1px solid var(--border); padding-bottom: env(safe-area-inset-bottom);
+            }
+            .mobile-sticky-cta button {
+                flex: 1; border: none; background: transparent; color: #fff; padding: 18px 10px; font-family: 'Manrope', sans-serif;
+                font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; text-decoration: none; text-align: center; cursor: pointer;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="container">
+        <div class="logo">
+            <span class="logo-badge">❄</span>
+            РемТех Сургут
+        </div>
+        <div class="nav-links">
+            <a href="#problems">Неисправности</a>
+            <a href="#prices">Цены</a>
+            <a href="#reviews">Отзывы</a>
+            <a href="#faq">Вопросы</a>
+        </div>
+        <div class="status">
+            Выезд мастера сегодня
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="container hero-grid">
+            <div>
+                <div class="hero-badge"><span class="dot"></span>Мастер свободен сегодня</div>
+                <h1>Ремонт холодильников <span>сегодня</span> в Сургуте</h1>
+                <p class="lead">Диагностика бесплатно при заказе ремонта. Приезжаем с запчастями для 90% типовых поломок — ремонт часто получается закрыть за один визит.</p>
+
+                <div class="hero-cta-row">
+                    <button class="btn-primary" onclick="openOrderModal()">Вызвать мастера</button>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="hero-stat"><b>1 год</b><span>Гарантия на работы</span></div>
+                    <div class="hero-stat"><b>&lt; 2 часов</b><span>Среднее время выезда</span></div>
+                    <div class="hero-stat"><b>90%</b><span>Ремонт за один визит</span></div>
+                </div>
+            </div>
+
+            <div class="hero-panel">
+                <h3 class="display-text">Похоже на вашу ситуацию?</h3>
+                <ul class="symptom-list">
+                    <li>Холодильник совсем не морозит или морозит слабо</li>
+                    <li>Постоянно работает и не отключается компрессор</li>
+                    <li>Течёт вода, образуется наледь или иней внутри</li>
+                    <li>Посторонний шум, гул или стук при работе</li>
+                    <li>Не горит подсветка, не работает панель управления</li>
+                </ul>
+                <div class="hero-panel-note">Опишите проблему в заявке — мастер предварительно оценит стоимость ремонта ещё до выезда.</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="trust-bar">
+        <div class="container">
+            <div class="trust-item"><b>1 год</b>Гарантия на работы</div>
+            <div class="trust-item"><b>0 ₽</b>Диагностика при ремонте</div>
+            <div class="trust-item"><b>Сегодня</b>Выезд мастера</div>
+            <div class="trust-item"><b>Любые марки</b>Отечественные и импортные</div>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-kicker">Почему выбирают нас</span>
+                <h2>Ремонт без лишних визитов и переплат</h2>
+                <p>Работаем прозрачно: называем цену до начала ремонта и не поднимаем её в процессе.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Выезд день в день</h3>
+                    <p>Записываем на ближайшее свободное окно — часто получается приехать в течение 2–4 часов после звонка.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛠</div>
+                    <h3>Запчасти с собой</h3>
+                    <p>Мастер выезжает с базовым набором компрессоров, термостатов и датчиков — большинство поломок закрываем за один визит.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧾</div>
+                    <h3>Честная диагностика</h3>
+                    <p>Диагностика бесплатна, если вы соглашаетесь на ремонт. Цену называем до начала работ, без скрытых доплат.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧊</div>
+                    <h3>Любые марки и типы</h3>
+                    <p>Ремонтируем холодильники, морозильные камеры и side-by-side любых производителей — от отечественных до премиальных.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3>Гарантия до 1 года</h3>
+                    <p>На выполненные работы и установленные запчасти даём письменную гарантию — приедем повторно бесплатно, если что-то пойдёт не так.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <h3>По всему Сургуту</h3>
+                    <p>Выезжаем в любой район города и ближайшие пригороды без наценки за удалённость.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section problems-section" id="problems">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-kicker">С чем работаем</span>
+                <h2>Частые неисправности холодильников</h2>
+                <p>Если не нашли свою проблему в списке — всё равно звоните, разберёмся на месте.</p>
+            </div>
+
+            <div class="problems-grid">
+                <div class="problem-card"><div class="problem-icon">🌡</div><span>Не морозит или морозит слабо</span></div>
+                <div class="problem-card"><div class="problem-icon">🔊</div><span>Сильный шум, гул или стук компрессора</span></div>
+                <div class="problem-card"><div class="problem-icon">💧</div><span>Течёт вода, скапливается лишняя влага</span></div>
+                <div class="problem-card"><div class="problem-icon">🧊</div><span>Намерзает лёд, не работает система No Frost</span></div>
+                <div class="problem-card"><div class="problem-icon">🔌</div><span>Не включается, выбивает автомат</span></div>
+                <div class="problem-card"><div class="problem-icon">💡</div><span>Не горит подсветка, сбоит электроника</span></div>
+                <div class="problem-card"><div class="problem-icon">🌀</div><span>Компрессор работает без остановки</span></div>
+                <div class="problem-card"><div class="problem-icon">🚪</div><span>Не закрывается или неплотно прилегает дверь</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-kicker">Как это устроено</span>
+                <h2>Ремонт за 4 простых шага</h2>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card"><div class="step-number">01</div><h3>Звонок мастеру</h3><p>Описываете проблему по телефону или в Telegram — мастер предварительно оценит стоимость.</p></div>
+                <div class="step-card"><div class="step-number">02</div><h3>Выезд и диагностика</h3><p>Приезжаем в удобное время, бесплатно определяем точную причину поломки.</p></div>
+                <div class="step-card"><div class="step-number">03</div><h3>Согласование цены</h3><p>Называем итоговую стоимость ремонта до начала работ — без сюрпризов в конце.</p></div>
+                <div class="step-card"><div class="step-number">04</div><h3>Ремонт и гарантия</h3><p>Устраняем неисправность на месте и выдаём гарантию на работы и запчасти до 1 года.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section price-section" id="prices">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-kicker">Стоимость</span>
+                <h2>Цены на ремонт холодильников</h2>
+                <p>Точная стоимость зависит от модели и характера неисправности — окончательную цену мастер называет после диагностики.</p>
+            </div>
+
+            <div class="price-table">
+                <div class="price-row-item"><div class="price-name">Диагностика<small>Бесплатно при заказе ремонта</small></div><div class="price-value">от 0 ₽</div></div>
+                <div class="price-row-item"><div class="price-name">Замена термостата / датчика температуры<small>Стандартный ремонт по управлению холодом</small></div><div class="price-value">от 1 800 ₽</div></div>
+                <div class="price-row-item"><div class="price-name">Заправка фреоном<small>Включая проверку контура на герметичность</small></div><div class="price-value">от 2 500 ₽</div></div>
+                <div class="price-row-item"><div class="price-name">Ремонт системы No Frost<small>Устранение обледенения, чистка дренажа</small></div><div class="price-value">от 3 000 ₽</div></div>
+                <div class="price-row-item"><div class="price-name">Замена пускозащитного реле<small>Частая причина шумной работы компрессора</small></div><div class="price-value">от 1 500 ₽</div></div>
+                <div class="price-row-item"><div class="price-name">Замена компрессора<small>С подбором аналога и вакуумированием системы</small></div><div class="price-value">от 6 500 ₽</div></div>
+                <div class="price-row-item"><div class="price-name">Ремонт электронного модуля управления<small>Диагностика платы, замена элементов</small></div><div class="price-value">от 2 800 ₽</div></div>
+                <div class="price-row-item"><div class="price-name">Замена уплотнителя двери<small>Устраняет утечку холода и наледь</small></div><div class="price-value">от 1 900 ₽</div></div>
+            </div>
+
+            <p class="price-note">Указана стоимость работ без учёта запчастей. Финальная цена согласовывается с вами до начала ремонта.</p>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <button class="btn-primary" onclick="openOrderModal()">Рассчитать стоимость ремонта</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section reviews-section" id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-kicker">Отзывы</span>
+                <h2>Что говорят клиенты</h2>
+                <p>Реальные отзывы о ремонте холодильников в Сургуте</p>
+            </div>
+
+            <div class="reviews-carousel-wrapper">
+                <button class="carousel-nav-btn prev" onclick="scrollReviews(-1)">&#10094;</button>
+                <div class="reviews-carousel" id="reviewsCarousel">
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <div class="review-text">«Холодильник перестал морозить вечером, утром уже приехал мастер. Оказалось реле, поменяли за 40 минут, недорого. Всё чётко объяснил.»</div>
+                        <div><div class="review-author-wrap"><span class="review-author">Оксана</span><span class="review-date">18.07.2026</span></div><div class="review-service">Замена пускозащитного реле</div></div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <div class="review-text">«Тёк холодильник, думал всё, придётся новый покупать. Мастер прочистил дренаж и поменял уплотнитель, дешевле новой техники в разы.»</div>
+                        <div><div class="review-author-wrap"><span class="review-author">Дмитрий</span><span class="review-date">12.07.2026</span></div><div class="review-service">Ремонт системы No Frost</div></div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <div class="review-text">«Компрессор гудел так, что ночью было слышно в спальне. Приехали быстро, диагностировали, заменили — тишина. Гарантию дали на год.»</div>
+                        <div><div class="review-author-wrap"><span class="review-author">Ильназ</span><span class="review-date">5 июля</span></div><div class="review-service">Замена компрессора</div></div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <div class="review-text">«Позвонила утром, мастер приехал в тот же день. Назвал цену сразу, в итоге заплатила ровно столько, сколько озвучили. Рекомендую.»</div>
+                        <div><div class="review-author-wrap"><span class="review-author">Гульнара</span><span class="review-date">28 июня</span></div><div class="review-service">Заправка фреоном</div></div>
+                    </div>
+                </div>
+                <button class="carousel-nav-btn next" onclick="scrollReviews(1)">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="faq">
+        <div class="container" style="max-width: 780px;">
+            <div class="section-header">
+                <span class="section-kicker">Вопросы</span>
+                <h2>Частые вопросы</h2>
+            </div>
+
+            <details class="faq-item" open>
+                <summary>Сколько стоит вызов мастера?</summary>
+                <p>Сам выезд и диагностика бесплатны, если вы принимаете решение отремонтировать холодильник. Если ремонт не потребовался или вы отказались от него — оплачивается только выезд, о его стоимости мастер предупредит заранее.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Можно ли отремонтировать холодильник в день обращения?</summary>
+                <p>В большинстве случаев — да. Мастер выезжает с базовым набором запчастей для типовых поломок, поэтому ремонт часто закрывается за один визит.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Даёте ли вы гарантию на ремонт?</summary>
+                <p>Да, на выполненные работы и установленные запчасти действует гарантия до 1 года. Если неисправность повторится в гарантийный срок — приедем и устраним бесплатно.</p>
+            </details>
+            <details class="faq-item">
+                <summary>С какими марками холодильников вы работаете?</summary>
+                <p>Ремонтируем холодильники и морозильные камеры всех марок — от отечественных моделей до премиальных side-by-side и встраиваемой техники.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Что делать, если холодильник совсем не включается?</summary>
+                <p>В первую очередь проверьте розетку и автомат в щитке. Если проблема не в этом — звоните нам, мастер по телефону поможет предварительно понять причину и приедет с нужными запчастями.</p>
+            </details>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="container">
+            <h2>Холодильник сломался? Мы уже едем</h2>
+            <p>Оставьте заявку — перезвоним в течение 10 минут и согласуем удобное время выезда</p>
+            <div class="hero-cta-row">
+                <button class="btn-primary" onclick="openOrderModal()">Вызвать мастера</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="orderModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeOrderModal()">&times;</span>
+            <h3 class="display-text" style="font-size: 1.6rem; margin-bottom: 10px;">Вызвать мастера</h3>
+            <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 25px; text-transform: none;">Оставьте телефон — перезвоним в течение 10 минут и уточним удобное время выезда.</p>
+
+            <form class="order-form" onsubmit="return submitOrderForm(event)">
+                <div class="form-group">
+                    <label>Ваше имя</label>
+                    <input type="text" name="name" required placeholder="Например, Александр" maxlength="100">
+                </div>
+                <div class="form-group">
+                    <label>Телефон</label>
+                    <input type="tel" name="phone" required placeholder="+7 (___) ___-__-__" pattern="[\d\s\+\(\)\-]{10,20}">
+                </div>
+                <div class="form-group">
+                    <label>Что случилось с холодильником?</label>
+                    <textarea name="details" rows="3" placeholder="Например: не морозит, шумит, течёт вода..." maxlength="500"></textarea>
+                </div>
+                <div class="form-group form-consent">
+                    <label class="consent-label">
+                        <input type="checkbox" required>
+                        <span>Согласен(а) с <a href="policy.html" target="_blank" rel="noopener">политикой обработки персональных данных</a></span>
+                    </label>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Отправить заявку</button>
+                <div class="order-form-status" id="order-form-status" style="margin-top: 12px; text-align: center; font-size: 0.9rem;"></div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">РемТех Сургут</div>
+            <p style="text-transform: none;">Ремонт холодильников и морозильных камер на дому в Сургуте.</p>
+            <p style="text-transform: none;">Гарантия на выполненную работу — до 1 года.</p>
+            <p style="margin-top: 20px; font-size: 0.75rem; opacity: 0.7; text-transform: none;">© 2026 Все права защищены.</p>
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="policy.html" style="color: var(--muted); font-size: 12px; text-decoration: underline;">Пользовательское соглашение и политика обработки персональных данных</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="mobile-sticky-cta">
+        <button onclick="openOrderModal()" style="flex: 1;">Оставить заявку</button>
+    </div>
+
+    <script>
+        const LEAD_WORKER_URL = 'https://surgut-climate.deadgormurder.workers.dev';
+
+        function openOrderModal() {
+            document.getElementById('orderModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeOrderModal() {
+            document.getElementById('orderModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        function scrollReviews(direction) {
+            const carousel = document.getElementById('reviewsCarousel');
+            carousel.scrollBy({ left: 340 * direction, behavior: 'smooth' });
+        }
+
+        function submitOrderForm(event) {
+            event.preventDefault();
+            const form = event.target;
+            const statusEl = document.getElementById('order-form-status');
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const name = form.name.value.trim();
+            const phone = form.phone.value.trim();
+            const details = form.details.value.trim();
+
+            statusEl.textContent = '';
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Отправляем...';
+
+            fetch(LEAD_WORKER_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, phone, source: 'Холодильники (urgent)', details }),
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.ok) {
+                        window.location.href = 'thanks.html';
+                    } else {
+                        throw new Error(data.error || 'unknown');
+                    }
+                })
+                .catch(() => {
+                    statusEl.style.color = '#ffb3ad';
+                    statusEl.textContent = 'Не получилось отправить заявку. Попробуйте ещё раз чуть позже.';
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Отправить заявку';
+                });
+
+            return false;
+        }
+    </script>
+
+</body>
+</html>
