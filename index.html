@@ -256,10 +256,11 @@
                 display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 300;
                 background: var(--navy); border-top: 1px solid var(--border-navy); padding-bottom: env(safe-area-inset-bottom);
             }
-            .mobile-sticky-cta button {
+            .mobile-sticky-cta a, .mobile-sticky-cta button {
                 flex: 1; border: none; background: transparent; color: #fff; padding: 18px 10px; font-family: 'Manrope', sans-serif;
                 font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; text-decoration: none; text-align: center; cursor: pointer;
             }
+            .mobile-sticky-cta a:first-child { border-right: 1px solid var(--border-navy); }
         }
     </style>
 </head>
@@ -278,7 +279,8 @@
             <a href="#faq">Вопросы</a>
         </div>
         <div class="status">
-            Выезд мастера сегодня
+            Выезд мастера сегодня <span>•</span>
+            <a href="tel:+79092072311">+7 (909) 207-23-11</a>
         </div>
     </nav>
 
@@ -669,6 +671,7 @@
 
     <!-- ПЛАВАЮЩАЯ ПАНЕЛЬ ДЛЯ МОБИЛЬНЫХ -->
     <div class="mobile-sticky-cta">
+        <a href="tel:+79092072311">Позвонить</a>
         <button onclick="openOrderModal()" style="flex: 1;">Оставить заявку</button>
     </div>
 
